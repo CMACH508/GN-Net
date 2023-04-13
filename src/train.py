@@ -41,13 +41,11 @@ def train(n_epoch = 200, BS = 128, LR=1e-4, step_size=200):
     print("norm_train.shape", norm_train.shape)
     print("norm_test.shape", norm_test.shape)
 
-    dataset_train_cube = pickle.load(open('../../dataset/dataset_cta_balanced_train.pkl', 'rb'))
-    dataset_test_cube = pickle.load(open('../../dataset/dataset_cta_balanced_test.pkl', 'rb'))
+    dataset_train_cube = pickle.load(open('../../dataset/dataset_cta_balanced_train_gnnet.pkl', 'rb'))
+    dataset_test_cube = pickle.load(open('../../dataset/dataset_cta_balanced_test_gnnet.pkl', 'rb'))
 
     cube_train = torch.tensor(dataset_train_cube['vox_train'])
     cube_test = torch.tensor(dataset_test_cube['vox_test'])
-    cube_train = cube_train[:,:1,:,:,:]
-    cube_test = cube_test[:,:1,:,:,:]
     print("cube_train.shape", cube_train.shape)
     print("cube_test.shape", cube_test.shape)
 

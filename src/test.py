@@ -27,10 +27,9 @@ y_test = torch.tensor(dataset_test['y_test'], dtype=torch.long)
 print("pc_test.shape", pc_test.shape)
 print("norm_test.shape", norm_test.shape)
 
-dataset_test_cube = pickle.load(open('../../dataset/dataset_cta_balanced_test.pkl', 'rb'))
+dataset_test_cube = pickle.load(open('../../dataset/dataset_cta_balanced_test_gnnet.pkl', 'rb'))
 
 cube_test = torch.tensor(dataset_test_cube['vox_test'])
-cube_test = cube_test[:,:1,:,:,:]
 print("cube_test.shape", cube_test.shape)
 
 test_dataset = Data.TensorDataset(pc_test, norm_test, cube_test, y_test)
